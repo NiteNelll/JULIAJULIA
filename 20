@@ -1,3 +1,6 @@
+using HorizonSideRobots
+r = Robot(animate = true)
+ 
 function backside(side)
     if side == Nord 
         return Sud
@@ -9,12 +12,13 @@ function backside(side)
         return West 
     end
 end
-
-function along_rec!(robot, side)
-    if isborder(robot, side) putmarker!(robot)
-    else
-        move!(robot, side)
-        along_rec!(robot, side)
-        move!(robot, backside(side))
+ 
+function task22!(r, side)
+    if isborder(r, side) == 0
+        move!(r, side)
+        task22!(r, side)
+        move!(r, backside(side))
+        move!(r, backside(side))
     end
 end
+Объясни
