@@ -21,4 +21,4 @@ function task22!(r, side)
         move!(r, backside(side))
     end
 end
-Объясни
+
